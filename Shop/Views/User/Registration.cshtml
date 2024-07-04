@@ -1,0 +1,38 @@
+﻿@model UserModel
+
+@{
+    ViewData["Title"] = "Реєстрація";
+}
+
+<link rel="stylesheet" href="~/css/StylesForRegAndLogForms.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="title"><span>Реєстрація</span></div>
+            <form method="post" asp-controller="User" asp-action="CheckRegistration">
+                <div class="row">
+                    <i class="fas fa-user"></i>
+                    <input type="text" asp-for="name" placeholder="Введіть ім'я'" required>
+                </div>
+                <div class="row">
+                    <i>@@</i>
+                    <input type="text" asp-for="email" placeholder="Введіть пошту" required>
+                </div>
+                <div class="row">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" asp-for="password" placeholder="Вевдіть пароль" required>
+                </div>
+                <div class="row">
+                    <i>#</i>
+                    <input type="text" asp-for="numOfPhone" placeholder="Вевдіть ваш номер телефону" required>
+                </div>
+                <div class="row button">
+                    <input type="submit" value="Зареєструватися">
+                </div>
+                <div class="signup-link">Вже зареєстровані? <a href="LogIn">Авторизуватися</a></div>
+            </form>
+        </div>
+    </div>
+</body>

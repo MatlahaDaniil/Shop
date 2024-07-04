@@ -1,0 +1,17 @@
+﻿@model ProductModel
+@{
+	Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="container">
+	<form method="post" asp-controller="Products" asp-action="CheckProduct">
+		<input class="form-control form-control-lg" asp-for="name" type="text" placeholder="Назва товару">
+		<input class="form-control form-control-lg" asp-for="price" type="text" placeholder="Ціна товару">
+		<div class="form-group">
+			<label for="Textarea1">Опис товару</label>
+			<textarea class="form-control" asp-for="description" id="Textarea1" rows="3"></textarea>
+		</div>
+		<input class="form-control form-control-lg" asp-for="image" type="text" placeholder="Посилання на фото">
+        <button type="submit" class="btn btn-primary">Опублікувати</button>
+	</form>
+</div>

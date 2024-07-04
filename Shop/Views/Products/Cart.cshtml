@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    ViewData["Title"] = "Кошик";
+}
+
+@{
+    foreach (var product in DbObjects.currentUser.favouriteProducts)
+    {
+
+        <div class="card" style="width: 18rem;">
+            <a href="@Url.Action("SelectedProduct", "Products", new { product.id })" style="color: black; text-decoration: none;">
+                <img class="card-img-top" src="@product.image" alt="Фотографія товару">
+                <div class="card-body">
+                    <h4 class="card-title">@product.name</h4>
+                </div>
+            </a>
+        </div>
+
+        <a href="#" class="btn alert">Купити</a>
+    }
+}

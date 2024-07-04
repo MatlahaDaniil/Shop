@@ -1,0 +1,34 @@
+﻿@model int
+@{
+    if (DbObjects.currentUser == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    }
+    DbObjects.selectedProduct = DbObjects.db.product.First(c => c.id == Model);
+    ViewData["Title"] = $"{DbObjects.selectedProduct}";
+
+}
+
+<link rel="stylesheet" href="~/css/StyleForSelectedProduct.css">
+
+<div class="container">
+    <img src="@DbObjects.selectedProduct.image" alt="Фото товару" />
+    <div>
+        <h1>@DbObjects.selectedProduct.name</h1>
+        <p>@DbObjects.selectedProduct.description</p>
+        @{
+            if (DbObjects.currentUser != null)
+            {
+                <a href="/Products/Cart/@DbObjects.selectedProduct.id" class="btn btn-primary"> Купити за @DbObjects.selectedProduct.price</a>
+            }
+            else
+            {
+                <input class="form-control" type="text" placeholder="Для придбання необхідно увійти або створити акаунт" readonly>
+            }
+        }
+    </div>
+</div>

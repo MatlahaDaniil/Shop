@@ -1,0 +1,37 @@
+﻿@using Shop.Models
+@model List<ProductModel>
+@{
+    if(DbObjects.currentUser == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    }
+    ViewData["Title"] = "Головна сторінка";
+}
+
+<link rel="stylesheet" href="~/css/StyleForMainPage.css">
+<div class="text-center">
+    <div class="container">
+        @{
+            if (Model != null)
+            {
+                foreach (var product in Model)
+                {
+
+                    <div class="card" style="width: 18rem;">
+                        <a href="@Url.Action("SelectedProduct", "Products", new { product.id })" style="color: black; text-decoration: none;">
+                    <img class="card-img-top" src="@product.image" alt="Фотографія товару">
+                    <div class="card-body">
+                        <h4 class="card-title">@product.name</h4>
+						</div>
+					</a>
+                    </div>
+
+                }
+            }
+        }
+    </div>
+</div>

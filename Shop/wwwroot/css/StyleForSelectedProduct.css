@@ -1,0 +1,13 @@
+﻿.container{
+    display:flex;
+}
+
+img {
+    margin-right: 50px;
+    margin-bottom: 60%;
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic; 
+}

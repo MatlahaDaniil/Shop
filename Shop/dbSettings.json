@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "\"Server=DESKTOP-Q6M74QL\\SQLEXPRESS;Database=TMPDB;Trusted_Connection=True;TrustServerCertificate=True\""
+  }
+}
